@@ -1,10 +1,36 @@
-.toolbar {
-    background-color: #dddddd;
-    margin: 0;
-    padding: 0;
+/* we'll target the entire nav */
+nav {
+    height: 50px;
+    background-color: #e00;
     overflow: hidden;
 }
+/*we'll target a specific tab*/
+nav a {
+    display: block;
+    float: left;
+    font-family: 'F1Regular', Arial, Helvetica, sans-serif;
+    color: white;
 
-li {
-    display: inline;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+/*we're going to use a css pseudo-class to change the background color when we hover over a tab */
+nav a:hover {
+    background-color: #000;
+}
+/*we're going to target the logo for some specific styles 'cause the logo is super special*/
+#logo {
+    /*font*/
+    font-family: 'F1Bold', sans-serif;
+    font-size: 30px;
+    letter-spacing: -2px;
+    text-shadow: 1px 1px 2px #c4c4c4;
+    /*box*/
+    padding-left: 20px;
+    padding-right: 40px;
+    margin-right: 10px;
+    margin-top: -10px;
 }
