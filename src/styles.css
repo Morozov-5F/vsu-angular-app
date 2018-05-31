@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+@font-face {
+    font-family: 'F1Regular';
+    src: url('fonts/Formula1-Regular.ttf');
+    src: url('fonts/Formula1-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'F1Bold';
+    src: url('fonts/Formula1-Bold.ttf');
+    src: url('fonts/Formula1-Bold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'F1Black';
+    src: url('fonts/Formula1-Black.ttf');
+    src: url('fonts/Formula1-Black.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'F1Wide';
+    src: url('fonts/Formula1-Wide.ttf');
+    src: url('fonts/Formula1-Wide.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal
+}
+
+h1 {
+    font-family: 'F1Bold', 'Helvetica', 'Arial', sans-serif;
+    font-size: 250%
+}
+
+h2, h3 {
+    color: #444;
+    font-family: F1Regular, Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+}
+
+body {
+    margin: 2em;
+}
+
+body, input[text], button {
+    color: #888;
+    font-family: 'Tillium Web', Helvetica, Arial, sans-serif;
+}
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
