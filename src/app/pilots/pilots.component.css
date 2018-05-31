@@ -48,11 +48,10 @@
   font-family: 'F1Regular', sans-serif;
 }
 
-.pilots-info .pilot-name {
-    font-family: 'F1Regular', sans-serif;
-    color: black
+.pilots .badge .mercedes {
+  background-color: #00D2BE;
 }
 
-.pilots-info .pilot-team {
-    font-family: 'Titillium Web', sans-serif;
+.pilots .badge .ferrari {
+  background-color: #DC0000;
 }

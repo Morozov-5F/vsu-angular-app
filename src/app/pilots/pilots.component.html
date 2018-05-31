@@ -3,12 +3,7 @@
   <li *ngFor="let pilot of pilots"
       (click)="onSelect(pilot)"
       [class.selected]="pilot === selectedPilot">
-    <span class="badge">{{pilot.number}}</span> {{pilot.firstName}} {{pilot.lastName}}
+    <span class="badge ferari">{{pilot.number}}</span> {{pilot.firstName}} {{pilot.lastName}}
   </li>
 </ul>
-
-<div *ngIf="selectedPilot" class="pilots-info">
-  <h2>{{selectedPilot.number}}</h2>
-  <div class="pilot-name">{{selectedPilot.firstName}} {{selectedPilot.lastName}}</div>
-  <div class="pilot-team">{{selectedPilot.team | uppercase}}</div>
-</div>
+<app-pilot-details [pilot]="selectedPilot"></app-pilot-details>
