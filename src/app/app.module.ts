@@ -7,6 +7,8 @@ import { PilotsListComponent } from './pilots-list/pilots-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PilotDetailsComponent } from './pilot-details/pilot-details.component';
 import { PilotComponent } from './pilot/pilot.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { PilotComponent } from './pilot/pilot.component';
     PilotsListComponent,
     ToolbarComponent,
     PilotDetailsComponent,
-    PilotComponent
+    PilotComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
