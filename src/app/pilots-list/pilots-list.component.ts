@@ -4,11 +4,11 @@ import { Pilot } from '../pilot';
 import { PILOTS } from '../mock-pilots';
 
 @Component({
-  selector: 'app-pilots',
-  templateUrl: './pilots.component.html',
-  styleUrls: ['./pilots.component.css']
+  selector: 'app-pilots-list',
+  templateUrl: './pilots-list.component.html',
+  styleUrls: ['./pilots-list.component.css']
 })
-export class PilotsComponent implements OnInit {
+export class PilotsListComponent implements OnInit {
   pilots = PILOTS;
   selectedPilot: Pilot;
 

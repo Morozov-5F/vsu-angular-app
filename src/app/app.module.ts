@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { PilotsComponent } from './pilots/pilots.component';
+import { PilotsListComponent } from './pilots-list/pilots-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PilotDetailsComponent } from './pilot-details/pilot-details.component';
+import { PilotComponent } from './pilot/pilot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PilotsComponent,
+    PilotsListComponent,
     ToolbarComponent,
-    PilotDetailsComponent
+    PilotDetailsComponent,
+    PilotComponent
   ],
   imports: [
     BrowserModule,

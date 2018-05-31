@@ -1,0 +1,15 @@
+/* pilotsComponent's private CSS styles */
+.pilots {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.pilots .badge .mercedes {
+  background-color: #00D2BE;
+}
+
+.pilots .badge .ferrari {
+  background-color: #DC0000;
+}
