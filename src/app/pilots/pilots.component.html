@@ -1,11 +1,14 @@
-<div>
-<h2>{{pilot.name}}</h2>
-<div>{{pilot.number}}</div>
-<div>{{pilot.firstName}} {{pilot.lastName}}</div>
-<div><span>Team: </span>{{pilot.team | uppercase}}</div>
+<h2>Formula 1 Pilots</h2>
+<ul class="pilots">
+  <li *ngFor="let pilot of pilots"
+      (click)="onSelect(pilot)"
+      [class.selected]="pilot === selectedPilot">
+    <span class="badge">{{pilot.number}}</span> {{pilot.firstName}} {{pilot.lastName}}
+  </li>
+</ul>
 
-<div>
-  <label>First Name:
-    <input [(ngModel)]="pilot.firstName" placeholder="Firstname">
-  </label>
+<div *ngIf="selectedPilot" class="pilots-info">
+  <h2>{{selectedPilot.number}}</h2>
+  <div class="pilot-name">{{selectedPilot.firstName}} {{selectedPilot.lastName}}</div>
+  <div class="pilot-team">{{selectedPilot.team | uppercase}}</div>
 </div>

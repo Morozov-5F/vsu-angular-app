@@ -4,11 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PilotsComponent } from './pilots/pilots.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { PilotDetailsComponent } from './pilot-details/pilot-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PilotsComponent
+    PilotsComponent,
+    ToolbarComponent,
+    PilotDetailsComponent
   ],
   imports: [
     BrowserModule,

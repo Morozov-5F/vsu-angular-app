@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Pilot } from '../pilot';
 
+import { PILOTS } from '../mock-pilots';
+
 @Component({
   selector: 'app-pilots',
   templateUrl: './pilots.component.html',
   styleUrls: ['./pilots.component.css']
 })
 export class PilotsComponent implements OnInit {
-  pilot: Pilot = {
-    number: 14,
-    firstName: 'Fernando',
-    lastName: 'Alonso',
-    team: 'McLaren',
-  };
+  pilots = PILOTS;
+  selectedPilot: Pilot;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(pilot: Pilot): void {
+    this.selectedPilot = pilot;
   }
 
 }
