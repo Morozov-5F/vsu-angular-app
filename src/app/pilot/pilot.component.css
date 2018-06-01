@@ -34,7 +34,8 @@
     background-color: #BBD8DC !important;
     color: white;
 }
-.pilot :hover {
+
+.pilot:hover {
     color: #607D8B;
     background-color: #DDD;
     left: .1em;

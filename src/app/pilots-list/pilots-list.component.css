@@ -13,3 +13,9 @@
 .pilots .badge .ferrari {
   background-color: #DC0000;
 }
+
+.pilots a {
+  text-decoration: none;
+  color: #888;
+}
+

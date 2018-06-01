@@ -15,4 +15,10 @@ export class PilotService {
     this.messageService.add('PilotService: fetched pilots');
     return of(PILOTS);
   }
+
+  getPilot(firstName: string, lastName: string): Observable<Pilot> {
+    this.messageService.add(`PilotService: fetched pilot ${firstName} ${lastName}`);
+    return of(PILOTS.find(pilot => (pilot.firstName.toLowerCase() === firstName &&
+                                    pilot.lastName.toLowerCase() === lastName)));
+  }
 }

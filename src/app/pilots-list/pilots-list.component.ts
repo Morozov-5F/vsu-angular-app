@@ -11,16 +11,11 @@ import { PilotService } from '../pilot.service';
 })
 export class PilotsListComponent implements OnInit {
   pilots: Pilot[];
-  selectedPilot: Pilot;
 
   constructor(private pilotService: PilotService) { }
 
   ngOnInit() {
     this.getPilots();
-  }
-
-  onSelect(pilot: Pilot): void {
-    this.selectedPilot = pilot;
   }
 
   getPilots(): void {
