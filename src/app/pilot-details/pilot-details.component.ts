@@ -26,7 +26,7 @@ export class PilotDetailsComponent implements OnInit {
     const firstName = names[0];
     const lastName  = names[1];
 
-    this.pilotService.getPilot(firstName, lastName).
+    this.pilotService.getPilotByName(firstName, lastName).
                       subscribe(pilot => this.pilot = pilot);
   }
 }

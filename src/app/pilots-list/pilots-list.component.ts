@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pilot } from '../pilot';
 
-import { PILOTS } from '../mock-pilots';
 import { PilotService } from '../pilot.service';
 
 @Component({
