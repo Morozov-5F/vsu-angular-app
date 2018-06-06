@@ -1,7 +1,7 @@
 <h2>Formula 1 Pilots</h2>
 <ul class="pilots">
   <li *ngFor="let pilot of pilots">
-    <a routerLink="/pilots/{{pilot.firstName | lowercase}}_{{pilot.lastName | lowercase}}">
+    <a *ngIf="pilot.team" routerLink="/pilots/{{pilot.firstName | lowercase}}_{{pilot.lastName | lowercase}}">
       <app-pilot [pilot]="pilot" [selected]="pilot === selectedPilot"></app-pilot>
     </a>
   </li>

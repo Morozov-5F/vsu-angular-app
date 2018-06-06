@@ -1,4 +1,4 @@
 <div class="pilot"
      [class.selected]="selected">
-  <span class="badge">{{pilot.number}}</span> {{pilot.firstName}} {{pilot.lastName}}
+  <span class="badge" [ngStyle]="{'background-color': pilot.team.color}">{{pilot.number}}</span> {{pilot.firstName}} {{pilot.lastName}}
 </div>

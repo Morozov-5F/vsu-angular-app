@@ -19,7 +19,13 @@ export class PilotsListComponent implements OnInit {
 
   getPilots(): void {
     this.pilotService.getPilots()
-                     .subscribe(pilots => this.pilots = pilots);
+                     .subscribe(pilots => {
+                        this.pilots = pilots;
+                        pilots.forEach(pilot => {
+                          this.pilotService.getPilotTeam(pilot.id)
+                                           .subscribe(team => pilot.team = team);
+                        });
+                     });
   }
 
 }

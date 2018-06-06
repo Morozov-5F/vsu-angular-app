@@ -3,6 +3,7 @@ import { Pilot } from '../pilot';
 import { ActivatedRoute } from '@angular/router';
 import { PilotService } from '../pilot.service';
 import { Location } from '@angular/common';
+import { Team } from '../team';
 
 @Component({
   selector: 'app-pilot-details',
@@ -27,6 +28,10 @@ export class PilotDetailsComponent implements OnInit {
     const lastName  = names[1];
 
     this.pilotService.getPilotByName(firstName, lastName).
-                      subscribe(pilot => this.pilot = pilot);
+                      subscribe(pilot => {
+                        this.pilot = pilot;
+                        this.pilotService.getPilotTeam(pilot.id)
+                                          .subscribe(team => this.pilot.team = team);
+                      });
   }
 }
