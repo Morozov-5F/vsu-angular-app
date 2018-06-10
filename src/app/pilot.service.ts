@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 import { Md5 } from 'ts-md5';
 import { Team } from './team';
 import { TeamService } from './team.service';
-import { PilotInTeam } from './pilotInTeam';
 
 @Injectable({
   providedIn: 'root'
@@ -68,6 +67,14 @@ export class PilotService {
       }),
       tap(_ => this.log(`fetched team for pilot id=${id}`)),
       catchError(this.handleError<Team>(`getPilotTeam id=${id}`))
+    );
+  }
+
+  getPilotsByTeam(teamId: number): Observable<Pilot[]> {
+    const url = `${this.pilotsUrl}?teamId=${teamId}`;
+    return this.http.get<Pilot[]>(url).pipe(
+      tap(_ => this.log(`fetched pilots for teamId=${teamId}`)),
+      catchError(this.handleError<Pilot[]>(`getPilotByTeam teamId=${teamId}`))
     );
   }
 }

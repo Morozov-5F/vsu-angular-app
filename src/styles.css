@@ -33,19 +33,33 @@
     font-style: normal
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/IcoMoon.ttf');
+    src: url('fonts/IcoMoon.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal
+}
+
 h1 {
     font-family: 'F1Bold', 'Helvetica', 'Arial', sans-serif;
     font-size: 250%
 }
 
-h2, h3 {
+h2 {
     color: #444;
-    font-family: F1Regular, Helvetica, Arial, sans-serif;
-    font-weight: lighter;
+    font-family: F1Bold, Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    font-size: 3.2rem;
+    line-height: 1.22;
 }
 
 body {
     margin: 2em;
+    background-color: #EDEDED;
+    font-size: 16px;
 }
 
 body, input[text], button {
@@ -55,4 +69,18 @@ body, input[text], button {
 
 * {
     font-family: 'Titillium Web', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    font-size: 65%;
+    font-family: Arial,sans-serif;
+}
+
+* body {
+    box-sizing: border-box;
 }

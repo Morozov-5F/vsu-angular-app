@@ -6,14 +6,6 @@
   width: 15em;
 }
 
-.pilots .badge .mercedes {
-  background-color: #00D2BE;
-}
-
-.pilots .badge .ferrari {
-  background-color: #DC0000;
-}
-
 .pilots a {
   text-decoration: none;
   color: #888;

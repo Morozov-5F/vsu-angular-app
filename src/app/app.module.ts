@@ -13,6 +13,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data-service';
+import { TeamComponent } from './team/team.component';
+import { TeamsListComponent } from './teams-list/teams-list.component';
+import { TeamDetailsComponent } from './team-details/team-details.component';
+import { ReplacePipe } from './replace.pipe';
+import { ZeroFormatPipe } from './zero-format.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { InMemoryDataService } from './in-memory-data-service';
     PilotDetailsComponent,
     PilotComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    TeamComponent,
+    TeamsListComponent,
+    TeamDetailsComponent,
+    ReplacePipe,
+    ZeroFormatPipe
   ],
   imports: [
     BrowserModule,
@@ -30,7 +40,7 @@ import { InMemoryDataService } from './in-memory-data-service';
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
+      InMemoryDataService, { dataEncapsulation: false, delay: 20 }
     )
   ],
   providers: [],

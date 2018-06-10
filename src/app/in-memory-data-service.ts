@@ -5,19 +5,19 @@ export class InMemoryDataService implements InMemoryDbService {
     createDb() {
         // Create teams
         const teams = [
-            { id: 1, name: 'Mercedes', country: 'GER', color: '#00D2BE', pilots: [
+            { id: 1, name: 'Mercedes', country: 'GER', color: '#00D2BE', podiums: 145, champions: 4, pilots: [
                 '3aead28c5fde52784b12c83c25d1a9a2',
                 '769aaa69ea361abec338fdbe52be79c8' ] },
-            { id: 2, name: 'Ferarri', country: 'GER', color: '#DC0000', pilots: [
+            { id: 2, name: 'Ferrari', country: 'GER', color: '#DC0000', podiums: 745, champions: 16, pilots: [
                 'b5e989b6b653b744880c8dacec71c40a',
                 'a3ac00139f8fa1a5a63ab843f5772ab9' ] },
-            { id: 3, name: 'Red Bull Racing', country: 'AUS', color: '#1E41FF', pilots: [
+            { id: 3, name: 'Red Bull Racing', country: 'AUS', color: '#1E41FF', podiums: 151, champions: 4, pilots: [
                     '6582080b78b55cd08fd26c662a1c8884',
                     'e262b9502038e1a66f323e3cacd29cc5' ] },
-            { id: 4, name: 'Force India', country: 'IND', color: '#F596C8', pilots: [
+            { id: 4, name: 'Force India', country: 'IND', color: '#F596C8', podiums: 6, champions: 0, pilots: [
                         'd7d3709a3ccdc64bf2887e71eba43d83',
                         '685f92b696be21b2ad737ba08834a588' ] },
-            { id: 5, name: 'Renault', country: 'FRA', color: '#FFF500', pilots: [
+            { id: 5, name: 'Renault', country: 'FRA', color: '#FFF500', podiums: 59, champions: 2, pilots: [
                             '',
                             '' ] },
         ];

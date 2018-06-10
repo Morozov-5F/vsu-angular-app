@@ -25,7 +25,7 @@
     cursor: pointer;
     position: relative;
     left: 0;
-    background-color: #EEE;
+    background-color: #FFF;
     margin: .5em;
     padding: .3em 0;
     height: 1.6em;
@@ -33,13 +33,13 @@
 }
 
 .pilot .selected:hover {
-    background-color: #BBD8DC !important;
+    background-color: #000 !important;
     color: white;
 }
 
 .pilot:hover {
-    color: #607D8B;
-    background-color: #DDD;
+    color: white;
+    background-color: black;
     left: .1em;
 }
 

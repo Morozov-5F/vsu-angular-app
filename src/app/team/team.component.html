@@ -1,0 +1,44 @@
+<section class="team-preview">
+  <a class="team-preview-wrapper">
+    <div class="team-preview-details">
+      <div class="panel-left">
+        <div class="panel-left-upper">
+          <h2 class="team-preview-title">
+            {{team.name}}
+          </h2>
+          <h3 class="srt">Drivers</h3>
+          <ul class="team-preview-drivers" *ngFor="let pilot of team.pilots">
+            <li class="team-preview-driver">
+              {{pilot.firstName}} {{pilot.lastName}}
+            </li>
+          </ul>
+        </div>
+        <div class="panel-left-lower">
+          <div class="team-preview-sponsor">
+            <img src="assets/img/sponsors/{{team.name | replace:' ':'-' | lowercase}}.jpg" alt="" data-emptytext="Image">
+          </div>
+        </div>
+      </div>
+      <table class="team-stat-list">
+        <tbody>
+          <tr class="team-stat-row" scope="row">
+            <th class="team-stat-key">
+              <span class="text">Podium Finishes</span>
+            </th>
+            <td class="team-stat-value">{{team.podiums | zeroFormat}}</td>
+          </tr>
+          <tr class="team-stat-row" scope="row">
+              <th class="team-stat-key">
+                <span class="text">Champion titles</span>
+              </th>
+              <td class="team-stat-value">{{team.champions | zeroFormat}}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="team-preview-image">
+      <span class="team-color" [ngStyle]="{'background-color': team.color}"></span>
+      <img src="assets/img/teams/{{team.name | replace:' ':'-' | lowercase}}.jpg" class="image">
+    </div>
+  </a>
+</section>
