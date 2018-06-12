@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MessageService } from './message.service';
 import { Observable, of } from 'rxjs';
 import { Team } from './team';
 import { tap, catchError } from 'rxjs/operators';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +18,7 @@ export class TeamService {
               private messageService: MessageService) { }
 
   private log(message: string) {
-    this.messageService.add('PilotService: ' + message);
+    this.messageService.add('TeamService: ' + message);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
@@ -31,7 +35,7 @@ export class TeamService {
 
   getTeams(): Observable<Team[]> {
     return this.http.get<Team[]>(this.teamsUrl).pipe(
-      tap(pilots => this.log(`fetched teams`)),
+      tap(Teams => this.log(`fetched teams`)),
       catchError(this.handleError('getTeams', []))
     );
   }
@@ -51,5 +55,29 @@ export class TeamService {
       tap(_ => this.log(`fetched team id=${id}`)),
       catchError(this.handleError<Team>(`getTeam id=${id}`))
     );
+  }
+
+  updateTeam(team: Team): Observable<any> {
+    team.pilots = null;
+    return this.http.put(this.teamsUrl, Team, httpOptions).pipe(
+        tap(_ => this.log(`updated Team id=${team.id}`)),
+        catchError(this.handleError<any>('updateTeam'))
+      );
+  }
+
+  addTeam(newTeam: Team): Observable<Team> {
+    return this.http.post<Team>(this.teamsUrl, newTeam, httpOptions).pipe(
+        tap((team: Team) => this.log(`added Team w/ id=${team.id}`)),
+        catchError(this.handleError<Team>('addTeam'))
+      );
+  }
+
+  deleteTeam(team: Team | number): Observable<Team> {
+    const id = typeof team === 'number' ? team : team.id;
+    const url = `${this.teamsUrl}/${id}`;
+
+    return this.http.delete<Team>(url, httpOptions).pipe(
+        tap(_ => this.log(`deleted Team id=${id}`)),
+        catchError(this.handleError<Team>('deteleTeam')));
   }
 }

@@ -3,10 +3,14 @@ import { Pilot } from './pilot';
 import { Observable, of, forkJoin } from 'rxjs';
 import { catchError, map, tap, flatMap, mergeMap } from 'rxjs/operators';
 import { MessageService } from './message.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Md5 } from 'ts-md5';
 import { Team } from './team';
 import { TeamService } from './team.service';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -76,5 +80,29 @@ export class PilotService {
       tap(_ => this.log(`fetched pilots for teamId=${teamId}`)),
       catchError(this.handleError<Pilot[]>(`getPilotByTeam teamId=${teamId}`))
     );
+  }
+
+  updatePilot(pilot: Pilot): Observable<any> {
+    pilot.team = null;
+    return this.http.put(this.pilotsUrl, pilot, httpOptions).pipe(
+        tap(_ => this.log(`updated pilot id=${pilot.id}`)),
+        catchError(this.handleError<any>('updatePilot'))
+      );
+  }
+
+  addPilot(newPilot: Pilot): Observable<Pilot> {
+    return this.http.post<Pilot>(this.pilotsUrl, newPilot, httpOptions).pipe(
+        tap((pilot: Pilot) => this.log(`added pilot w/ id=${pilot.id}`)),
+        catchError(this.handleError<Pilot>('addPilot'))
+      );
+  }
+
+  deletePilot(pilot: Pilot | string): Observable<Pilot> {
+    const id = typeof pilot === 'string' ? pilot : pilot.id;
+    const url = `${this.pilotsUrl}/${id}`;
+
+    return this.http.delete<Pilot>(url, httpOptions).pipe(
+        tap(_ => this.log(`deleted pilot id=${id}`)),
+        catchError(this.handleError<Pilot>('detelePilot')));
   }
 }
