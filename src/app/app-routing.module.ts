@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'teams/:name', component: TeamDetailsComponent },
   { path: 'admin/pilots', component: AdminPilotsComponent },
   { path: 'admin/teams', component: AdminTeamsComponent },
+  { path: '', redirectTo: '/teams', pathMatch: 'full' },
 ];
 
 @NgModule({
