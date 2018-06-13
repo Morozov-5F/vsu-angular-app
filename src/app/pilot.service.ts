@@ -50,8 +50,7 @@ export class PilotService {
     const url = `${this.pilotsUrl}/${id}`;
     return this.http.get<Pilot>(url).pipe(
       tap(_ => this.log(`fetched pilot id=${id}`)),
-      catchError(this.handleError<Pilot>(`getPilot id=${id}`))
-  );
+      catchError(this.handleError<Pilot>(`getPilot id=${id}`)));
   }
 
   getPilotByName(firstName: string, lastName: string): Observable<Pilot> {

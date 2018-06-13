@@ -12,17 +12,17 @@ export class InMemoryDataService implements InMemoryDbService {
                 'b5e989b6b653b744880c8dacec71c40a',
                 'a3ac00139f8fa1a5a63ab843f5772ab9' ] },
             { id: 3, name: 'Red Bull Racing', country: 'AUS', color: '#1E41FF', podiums: 151, champions: 4, pilots: [
-                    '6582080b78b55cd08fd26c662a1c8884',
-                    'e262b9502038e1a66f323e3cacd29cc5' ] },
+                '6582080b78b55cd08fd26c662a1c8884',
+                'e262b9502038e1a66f323e3cacd29cc5' ] },
             { id: 4, name: 'Force India', country: 'IND', color: '#F596C8', podiums: 6, champions: 0, pilots: [
-                        'd7d3709a3ccdc64bf2887e71eba43d83',
-                        '685f92b696be21b2ad737ba08834a588' ] },
+                'd7d3709a3ccdc64bf2887e71eba43d83',
+                '685f92b696be21b2ad737ba08834a588' ] },
             { id: 5, name: 'Renault', country: 'FRA', color: '#FFF500', podiums: 59, champions: 2, pilots: [
-                            '',
-                            '' ] },
+                '',
+                '' ] },
         ];
 
-        // Create pilots (without teams yet)
+        // Create pilots
         const pilots = [
             {id: '3aead28c5fde52784b12c83c25d1a9a2', firstName: 'Lewis', lastName: 'Hamilton', number: 44, teamId: 1},
             {id: 'b5e989b6b653b744880c8dacec71c40a', firstName: 'Sebastian', lastName: 'Vettel', number: 5, teamId: 2},
