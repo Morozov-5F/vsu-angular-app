@@ -34,7 +34,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 '' ] },
         ];
 
-        // Create pilots (without teams yet)
+        // Create pilots
         const pilots = [
             {id: '3aead28c5fde52784b12c83c25d1a9a2', firstName: 'Lewis', lastName: 'Hamilton', number: 44, teamId: 1},
             {id: 'b5e989b6b653b744880c8dacec71c40a', firstName: 'Sebastian', lastName: 'Vettel', number: 5, teamId: 2},
