@@ -40,11 +40,11 @@ export class TeamService {
     );
   }
 
-  getTeamByName(name: string): Observable<Team> {
+  getTeamByName(name: string): Observable<Team[]> {
     const url = `${this.teamsUrl}?name=${name}`;
-    return this.http.get<Team>(url).pipe(
+    return this.http.get<Team[]>(url).pipe(
       tap(_ => this.log(`fetched team name=${name}`)),
-      catchError(this.handleError<Team>(`getTeamByName name=${name}`))
+      catchError(this.handleError<Team[]>(`getTeamByName name=${name}`))
     );
   }
 

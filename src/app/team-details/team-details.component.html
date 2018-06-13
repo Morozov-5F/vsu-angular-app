@@ -1,3 +1,12 @@
-<p>
-  team-details works!
-</p>
+<div *ngIf="team">
+  <h2>{{team.name}}</h2>
+  <div class="team-info">
+    <div class="team-details-left">
+      test
+    </div>
+    <div class="team-details-right">
+      <span class="team-color" [ngStyle]="{'background-color': team.color}"></span>
+      <img src="assets/img/teams/{{team.name | replace:' ':'-' | lowercase}}.jpg" class="image">
+    </div>
+  </div>
+</div>

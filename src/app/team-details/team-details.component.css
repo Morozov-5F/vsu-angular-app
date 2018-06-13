@@ -1,0 +1,38 @@
+.team-info {
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  transition: all .2s ease-out;
+  width: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  display: table;
+  min-height: 1000px;
+}
+
+.team-details-left {
+  display: table-cell;
+  padding: 0 0 0 30px;
+  width: 46.33%;
+  vertical-align: top;
+}
+
+.team-details-right {
+  display: table-cell;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: top;
+  position: absolute;
+  width: 53.67%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all .2s ease-out;
+}

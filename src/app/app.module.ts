@@ -18,6 +18,9 @@ import { TeamsListComponent } from './teams-list/teams-list.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { ReplacePipe } from './replace.pipe';
 import { ZeroFormatPipe } from './zero-format.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { AdminPlayersComponent } from './admin-players/admin-players.component';
+import { AdminTeamsComponent } from './admin-teams/admin-teams.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ZeroFormatPipe } from './zero-format.pipe';
     TeamsListComponent,
     TeamDetailsComponent,
     ReplacePipe,
-    ZeroFormatPipe
+    ZeroFormatPipe,
+    AdminComponent,
+    AdminPlayersComponent,
+    AdminTeamsComponent
   ],
   imports: [
     BrowserModule,
