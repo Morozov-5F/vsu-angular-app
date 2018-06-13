@@ -83,8 +83,12 @@ export class PilotService {
   }
 
   updatePilot(pilot: Pilot): Observable<any> {
-    pilot.team = null;
-    return this.http.put(this.pilotsUrl, pilot, httpOptions).pipe(
+    const pilotTransfer: any = {};
+    Object.assign(pilotTransfer, pilot);
+    delete pilotTransfer.team;
+    console.log(pilotTransfer);
+
+    return this.http.put(this.pilotsUrl, pilotTransfer, httpOptions).pipe(
         tap(_ => this.log(`updated pilot id=${pilot.id}`)),
         catchError(this.handleError<any>('updatePilot'))
       );

@@ -1,0 +1,26 @@
+<table border=1>
+  <tr>
+      <th class="table-value">ID</th>
+      <th class="table-value">First Name</th>
+      <th class="table-value">Last Name</th>
+      <th class="table-value">Number</th>
+      <th class="table-value">Team</th>
+  </tr>
+  <tr *ngFor="let pilot of pilots">
+    <td class="table-value">{{pilot.id}}</td>
+    <td *ngIf="editCellId === makeCellId(pilot, 'firstName')" class="table-value"><input type="text" (keyup)="finishEditing($event, pilot)" [(ngModel)]="pilot.firstName"></td>
+    <td *ngIf="editCellId !== makeCellId(pilot, 'firstName')" class="table-value" (click)="toggleCellInput(makeCellId(pilot, 'firstName'))">{{pilot.firstName | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(pilot, 'lastName')" class="table-value"><input type="text" (keyup)="finishEditing($event, pilot)" [(ngModel)]="pilot.lastName"></td>
+    <td *ngIf="editCellId !== makeCellId(pilot, 'lastName')" class="table-value" (click)="toggleCellInput(makeCellId(pilot, 'lastName'))">{{pilot.lastName | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(pilot, 'number')" class="table-value"><input type="text" (keyup)="finishEditing($event, pilot)" [(ngModel)]="pilot.number"></td>
+    <td *ngIf="editCellId !== makeCellId(pilot, 'number')" class="table-value" (click)="toggleCellInput(makeCellId(pilot, 'number'))">{{pilot.number | undefinedFormat}}</td>
+    <td>
+      <select [(ngModel)]="pilot.teamId" (change)="updateTeam($event, pilot)" (focus)="updateOldValue(pilot.teamId)">
+        <option *ngFor="let team of teams" [ngValue]="team.id">{{team.name}}</option>
+        <option value="">None</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<button (click)="addPilot()">Add Pilot</button>
+

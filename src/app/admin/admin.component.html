@@ -1,1 +1,6 @@
-<app-admin-teams></app-admin-teams>
+<app-admin-teams *ngIf="currentMode === 'teams'"></app-admin-teams>
+<app-admin-pilots *ngIf="currentMode === 'pilots'"></app-admin-pilots>
+<select [(ngModel)]="currentMode" (change)="changeMode($event)">
+    <option value="teams">Teams</option>
+    <option value="pilots">Pilots</option>
+</select>

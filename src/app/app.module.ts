@@ -19,7 +19,7 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
 import { ReplacePipe } from './replace.pipe';
 import { ZeroFormatPipe } from './zero-format.pipe';
 import { AdminComponent } from './admin/admin.component';
-import { AdminPlayersComponent } from './admin-players/admin-players.component';
+import { AdminPilotsComponent } from './admin-pilots/admin-pilots.component';
 import { AdminTeamsComponent } from './admin-teams/admin-teams.component';
 import { UndefinedFormatPipe } from './undefined-format.pipe';
 
@@ -38,7 +38,7 @@ import { UndefinedFormatPipe } from './undefined-format.pipe';
     ReplacePipe,
     ZeroFormatPipe,
     AdminComponent,
-    AdminPlayersComponent,
+    AdminPilotsComponent,
     AdminTeamsComponent,
     UndefinedFormatPipe
   ],

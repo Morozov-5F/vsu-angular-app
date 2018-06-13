@@ -1,6 +1,12 @@
 <nav>
-    <a routerLink="/" id="logo">F1 Exchange</a>
-    <a routerLink="/pilots">Pilots</a>
-    <a routerLink="/teams">Teams</a>
-    <a routerLink="/admin">Admin</a>
+    <a   class="logo-link" routerLink="/" id="logo">F1 Exchange</a>
+    <a   class="link" routerLink="/pilots">Pilots</a>
+    <a   class="link" routerLink="/teams">Teams</a>
+    <div class="link dropdown">
+        Admin
+        <div class="dropdown-content">
+            <a routerLink="/admin/teams">Teams</a>
+            <a routerLink="/admin/pilots">Pilots</a>
+        </div>
+    </div>
 </nav>
