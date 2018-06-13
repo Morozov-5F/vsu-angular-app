@@ -1,3 +1,60 @@
-<p>
-  admin-teams works!
-</p>
+<table border=1>
+  <tr>
+      <th class="table-value">ID</th>
+      <th class="table-value">Name</th>
+      <th class="table-value">Country</th>
+      <th class="table-value">Color</th>
+      <th class="table-value">Podiums</th>
+      <th class="table-value">Champions</th>
+      <th class="table-value">Full Name</th>
+      <th class="table-value">Base</th>
+      <th class="table-value">Team Chief</th>
+      <th class="table-value">Power Unit</th>
+      <th class="table-value">First Entry</th>
+      <th class="table-value">World Championships</th>
+      <th class="table-value">Pole Positions</th>
+      <th class="table-value">Pilots</th>
+  </tr>
+  <tr *ngFor="let team of teams">
+    <td class="table-value">{{team.id}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'name')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.name"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'name')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'name'))">{{team.name | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'country')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.country"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'country')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'country'))">{{team.country | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'color')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.color"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'color')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'color'))">{{team.color | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'podiums')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.podiums"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'podiums')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'podiums'))">{{team.podiums | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'champions')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.champions"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'champions')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'champions'))">{{team.champions | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'fullName')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.fullName"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'fullName')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'fullName'))">{{team.fullName | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'base')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.base"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'base')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'base'))">{{team.base | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'teamChief')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.teamChief"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'teamChief')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'teamChief'))">{{team.teamChief | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'powerUnit')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.powerUnit"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'powerUnit')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'powerUnit'))">{{team.powerUnit | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'firstEntry')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.firstEntry"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'firstEntry')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'firstEntry'))">{{team.firstEntry | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'worldChampionships')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.worldChampionships"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'worldChampionships')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'worldChampionships'))">{{team.worldChampionships | undefinedFormat}}</td>
+    <td *ngIf="editCellId === makeCellId(team, 'polePositions')" class="table-value"><input type="text" (keyup)="finishEditing($event, team)" [(ngModel)]="team.polePositions"></td>
+    <td *ngIf="editCellId !== makeCellId(team, 'polePositions')" class="table-value" (click)="toggleCellInput(makeCellId(team, 'polePositions'))">{{team.polePositions | undefinedFormat}}</td>
+    <td>
+      <table>
+        <tr *ngFor="let pilot of team.pilots">
+          <td>
+            <select [(ngModel)]="pilot.id" (change)="updatePilot($event, team)" (focus)="updateOldValue(pilot.id)">
+              <option *ngFor="let p of pilots" [ngValue]="p.id">{{p.firstName}} {{p.lastName}}</option>
+              <option value="">None</option>
+            </select>
+          </td>
+        </tr>
+        <button (click)="addPilot(team)">Add Pilot</button>
+      </table>
+    </td>
+  </tr>
+</table>
+<button (click)="addTeam()">Add Team</button>
+

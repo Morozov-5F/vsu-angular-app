@@ -58,8 +58,15 @@ export class TeamService {
   }
 
   updateTeam(team: Team): Observable<any> {
-    team.pilots = null;
-    return this.http.put(this.teamsUrl, Team, httpOptions).pipe(
+    const teamTransfer: any = {};
+    Object.assign(teamTransfer, team);
+    teamTransfer.pilots = [];
+    team.pilots.forEach(pilot => {
+      teamTransfer.pilots.push(pilot.id);
+    });
+    console.log(teamTransfer);
+
+    return this.http.put(this.teamsUrl, teamTransfer, httpOptions).pipe(
         tap(_ => this.log(`updated Team id=${team.id}`)),
         catchError(this.handleError<any>('updateTeam'))
       );

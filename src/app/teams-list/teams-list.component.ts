@@ -23,12 +23,12 @@ export class TeamsListComponent implements OnInit {
     this.teamService.getTeams()
                     .subscribe(teams => {
                       this.teams = teams;
-                        teams.forEach(team => {
-                          this.pilotService.getPilotsByTeam(team.id)
-                                           .subscribe(pilots => {
-                                              team.pilots = pilots;
-                                           });
-                        });
+                      teams.forEach(team => {
+                        this.pilotService.getPilotsByTeam(team.id)
+                                          .subscribe(pilots => {
+                                            team.pilots = pilots;
+                                          });
+                      });
                     });
   }
 }
