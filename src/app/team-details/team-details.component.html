@@ -2,7 +2,50 @@
   <h2>{{team.name}}</h2>
   <div class="team-info">
     <div class="team-details-left">
-      test
+      <div class="top-info">
+        <div class="brand-image">
+          <span class="helper"></span>
+          <img src="assets/img/sponsors/{{team.name | replace:' ':'-' | lowercase}}.jpg" class="brand-img">
+        </div>
+        <h3 class="srt">Drivers</h3>
+        <ul class="team-preview-drivers" *ngFor="let pilot of team.pilots">
+          <li class="team-preview-driver">
+            {{pilot.firstName}} {{pilot.lastName}}
+          </li>
+        </ul>
+      </div>
+      <table class="stat-list">
+        <tbody>
+          <tr>
+            <th scope="row" class="stat-key">Full Team Name</th>
+            <td class="stat-value">{{team.fullName | undefinedFormat}}</td>
+          </tr>
+          <tr>
+              <th scope="row" class="stat-key">Base</th>
+              <td class="stat-value">{{team.base | undefinedFormat}}</td>
+          </tr>
+          <tr>
+              <th scope="row" class="stat-key">Team Chief</th>
+              <td class="stat-value">{{team.teamChief | undefinedFormat}}</td>
+          </tr>
+          <tr>
+              <th scope="row" class="stat-key">Power Unit</th>
+              <td class="stat-value">{{team.powerUnit | undefinedFormat}}</td>
+          </tr>
+          <tr>
+              <th scope="row" class="stat-key">First Entry</th>
+              <td class="stat-value">{{team.firstEntry | undefinedFormat}}</td>
+          </tr>
+          <tr>
+              <th scope="row" class="stat-key">World Championsips</th>
+              <td class="stat-value">{{team.worldChampionships | undefinedFormat}}</td>
+          </tr>
+          <tr>
+              <th scope="row" class="stat-key">Pole positions</th>
+              <td class="stat-value">{{team.polePositions | undefinedFormat}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="team-details-right">
       <span class="team-color" [ngStyle]="{'background-color': team.color}"></span>

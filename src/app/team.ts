@@ -7,5 +7,12 @@ export class Team {
     color: string;
     podiums: number;
     champions: number;
+    fullName: string;
+    base: string;
+    teamChief: string;
+    powerUnit: string;
+    firstEntry: number;
+    worldChampionships: number;
+    polePositions: number;
     pilots: Pilot[];
 }
