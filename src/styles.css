@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 
-/* @font-face {
+@font-face {
     font-family: 'F1Regular';
     src: url('fonts/Formula1-Regular.ttf');
     src: url('fonts/Formula1-Regular.ttf') format('truetype');
@@ -39,7 +39,7 @@
     src: url('fonts/IcoMoon.ttf') format('truetype');
     font-weight: 500;
     font-style: normal
-} */
+}
 
 h1 {
     font-family: 'F1Bold', 'Helvetica', 'Arial', sans-serif;
