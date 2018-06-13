@@ -81,8 +81,7 @@ export class AdminPilotsComponent implements OnInit {
       if (oldTeam) {
         oldTeam.pilots = oldTeam.pilots.filter(p => p.id !== pilot.id);
         this.teamService.updateTeam(oldTeam).subscribe(() => this.refreshTeams());
-      }
-      else {
+      } else {
         this.refreshTeams();
       }
     });

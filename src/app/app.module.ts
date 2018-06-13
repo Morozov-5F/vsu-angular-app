@@ -9,7 +9,6 @@ import { PilotDetailsComponent } from './pilot-details/pilot-details.component';
 import { PilotComponent } from './pilot/pilot.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data-service';
@@ -18,7 +17,6 @@ import { TeamsListComponent } from './teams-list/teams-list.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { ReplacePipe } from './replace.pipe';
 import { ZeroFormatPipe } from './zero-format.pipe';
-import { AdminComponent } from './admin/admin.component';
 import { AdminPilotsComponent } from './admin-pilots/admin-pilots.component';
 import { AdminTeamsComponent } from './admin-teams/admin-teams.component';
 import { UndefinedFormatPipe } from './undefined-format.pipe';
@@ -31,13 +29,11 @@ import { UndefinedFormatPipe } from './undefined-format.pipe';
     PilotDetailsComponent,
     PilotComponent,
     MessagesComponent,
-    DashboardComponent,
     TeamComponent,
     TeamsListComponent,
     TeamDetailsComponent,
     ReplacePipe,
     ZeroFormatPipe,
-    AdminComponent,
     AdminPilotsComponent,
     AdminTeamsComponent,
     UndefinedFormatPipe
